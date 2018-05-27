@@ -29,5 +29,21 @@ describe("Bowling", function() {
       expect(game.current_roll).toEqual(2);
     });
 
+    it('should update #frame_score', function() {
+      game.roll(8);
+      expect(game.frame_score).toEqual(8);
+    });
+
+  describe("#end_frame", function() {
+
+    it('should reset #current_roll to 1', function() {
+      game.roll(10);
+      game.end_frame();
+      expect(game.current_roll).toEqual(1);
+    });
+
+  });
+
+
     });
 });
