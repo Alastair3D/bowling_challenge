@@ -4,6 +4,13 @@ describe("Bowling", function() {
     game = new Bowling;
   });
 
+  describe("#scorecard", function() {
+
+    it('should start as an empty array', function() {
+      expect(game.scorecard).toEqual([])
+    });
+  });
+
   describe("#roll", function() {
 
     it('should knock over a number of pins', function() {
@@ -33,6 +40,7 @@ describe("Bowling", function() {
       game.roll(8);
       expect(game.frame_score).toEqual(8);
     });
+  });
 
   describe("#end_frame", function() {
 
@@ -42,8 +50,19 @@ describe("Bowling", function() {
       expect(game.current_roll).toEqual(1);
     });
 
+    it('should update #scorecard', function() {
+      game.roll(6);
+      game.roll(3);
+      game.end_frame();
+      expect(game.scorecard).toEqual([9]);
+    });
+
+    it('should start a new frame after a strike', function() {
+      game.roll(10);
+      expect(game.current_frame).toEqual(2);
+    });
+
   });
 
 
-    });
 });
