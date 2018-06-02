@@ -1,6 +1,6 @@
 # bowling_challenge
 
-This project models counting & summing the scores of a 1-player, 10-frame bowling game.
+This project models counting & summing the scores of a 1-player, 10-frame game of ten-pin bowling.
 
 To run the tests:
 Step 1: git clone https://github.com/Alastair3D/bowling_challenge
